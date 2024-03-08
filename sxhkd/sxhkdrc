@@ -9,9 +9,6 @@ super + e
 # Screenshot
 Print
 	flameshot gui
-
-
-
 # terminal emulator
 super + Return
 	alacritty
@@ -126,21 +123,41 @@ super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 
-# volume control
-XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +10%
-XF86AudioLowerVolume
-    pactl set-sink-volume 0 -10%
-XF86AudioMute
-    pactl set-sink-mute 0 toggle
-XF86AudioPlay
-	playerctl play-pause
-XF86AudioPause
-	playerctl play-pause
-XF86AudioNext
-	playerctl next
-XF86AudioPrev
-	playerctl previous
-# Brightness
+# # volume control
+# XF86AudioRaiseVolume
+#     pactl set-sink-volume 0 +10%
+# XF86AudioLowerVolume
+#     pactl set-sink-volume 0 -10%
+# XF86AudioMute
+#     pactl set-sink-mute 0 toggle
+# XF86AudioPlay
+# 	playerctl play-pause
+# XF86AudioPause
+# 	playerctl play-pause
+# XF86AudioNext
+# 	playerctl next
+# XF86AudioPrev
+# 	playerctl previous
+# # Brightness
 XF86MonBrightness{Down,Up}
-	brightnessctl s 5%{-,+}
+ 	brightnessctl sc 5%{-,+}
+
+
+/home/craacky/.config/sxhkd/volume_brightness.sh
+
+XF86AudioRaiseVolume
+	/home/craacky/.config/sxhkd/volume_brightness.sh volume_up
+XF86AudioLowerVolume
+	/home/craacky/.config/sxhkd/volume_brightness.sh volume_down
+XF86AudioMute
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh volume_mute
+XF86AudioPlayPause
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh play_pause
+XF86AudioPause
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh play_pause
+XF86AudioPlay
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh play_pause
+XF86AudioNext
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh next_track
+XF86AudioPrev
+ 	/home/craacky/.config/sxhkd/volume_brightness.sh prev_track

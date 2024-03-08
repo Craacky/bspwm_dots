@@ -1,14 +1,14 @@
 * {
     bg-col:  #0F0C0B;
-    bg-col-light: #74c69d;
-    border-col: #74c69d;
-    selected-col: #74c69d;
-    blue: #74c69d;
+    bg-col-light: #79AC78;
+    border-col: #79AC78;
+    selected-col: #79AC78;
+    blue: #79AC78;
     fg-col: #C5C8C6;
     fg-col2: #0f0c0b;
     grey: #0F0C0B;
 
-    width: 900;
+    width: 600;
     font: "JetBrainsMono Nerd Font 12";
 }
 
@@ -18,7 +18,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 600px;
+    height: 400px;
     border: 3px;
     border-radius: 10px;
     border-color: @border-col;
